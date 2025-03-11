@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickjacking Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: darkblue;
+            color: white;
+            margin: 50px;
+        }
+        input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: navy;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: black;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            margin-top: 20px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Clickjacking Vulnerability Tester</h2>
+    <input type="text" id="urlInput" placeholder="Enter URL here">
+    <button onclick="checkURL()">Check</button>
+    
+    <p>Generated URL:</p>
+    <p id="finalURL"></p>
+    
+    <iframe id="resultFrame"></iframe>
+
+    <script>
+        function checkURL() {
+            let inputURL = document.getElementById("urlInput").value.trim();
+            if (!inputURL) {
+                alert("Please enter a valid URL.");
+                return;
+            }
+
+            // Encode the URL properly
+            let encodedURL = encodeURIComponent(inputURL);
+
+            // Manually construct the final URL
+            let finalURL = `https://translate.yandex.com/translate?view=compact&url=${encodedURL}&lang=en-nl&gcp=v4a000st27cq`;
+
+            // Display the final URL
+            document.getElementById("finalURL").textContent = finalURL;
+
+            // Load the final URL into the iframe
+            document.getElementById("resultFrame").src = finalURL;
+        }
+    </script>
+
+</body>
+</html>
