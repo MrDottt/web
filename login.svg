@@ -1,0 +1,10 @@
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <foreignObject width="100%" height="100%">
+    <!-- Add the text at the top-middle of the SVG -->
+    <div xmlns="http://www.w3.org/1999/xhtml" style="text-align: center; position: absolute; top: 50px; left: 0; right: 0; font-size: 24px; color: Black;">
+      
+    </div>
+    <!-- Add the iframe on top of the blurred background -->
+    <iframe xmlns="http://www.w3.org/1999/xhtml" width="100%" height="100%" src="https://mrdottt.github.io/web/login_soj.html" style="border: none;"></iframe>
+  </foreignObject>
+</svg>
