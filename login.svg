@@ -5,6 +5,6 @@
       
     </div>
     <!-- Add the iframe on top of the blurred background -->
-    <iframe srcdoc="<img src=x onerror=prompt(document.domain)>"></iframe>
+    <iframe xmlns="http://www.w3.org/1999/xhtml" width="100%" height="100%" src="https://translate.yandex.com/translate?view=compact&url=https%3A%2F%2Fopencagedata.com%2Fusers%2Fsign_in&gcp=v4a000st27cq" style="border: none;"></iframe>
   </foreignObject>
 </svg>
