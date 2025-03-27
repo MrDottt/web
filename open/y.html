@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-indent="false">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <base href=".">
+    <style type="text/css">
+        @font-face {
+            src: local("GF Zemen Unicode"),
+            url("https://yastatic.net/s3/translate/v184.4/fnt/gfzemenu.woff") format("woff"),
+            url("https://yastatic.net/s3/translate/v184.4/fnt/gfzemenu.ttf") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+            font-family: "GF Zemen Unicode";
+        }
+        @font-face {
+            src: local("Noto Sans Myanmar"),
+            url("https://yastatic.net/s3/translate/v184.4/fnt/myanmar.woff") format("woff"),
+            url("https://yastatic.net/s3/translate/v184.4/fnt/myanmar.ttf") format("truetype");
+            font-style: normal;
+            font-weight: normal;
+            font-family: "Noto Sans Myanmar";
+        }
+        [lang="am"],
+        [lang="am"] * {
+            font-family: "GF Zemen Unicode", sans-serif !important;
+        }
+        [lang="my"],
+        [lang="my"] * {
+            font-family: "Noto Sans Myanmar", sans-serif !important;
+        }
+        html[data-indent="true"] {
+            transform: translateY(56px);
+        }
+        #tr-popup,
+        #tr-popup *,
+        #tr-stripe,
+        #tr-stripe * {
+            clip: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            float: none;
+            width: auto;
+            height: auto;
+            margin: 0;
+            border: 0;
+            opacity: 1;
+            z-index: auto;
+            padding: 0;
+            outline: 0;
+            position: static;
+            overflow: visible;
+            direction: ltr;
+            min-width: 0;
+            max-width: none;
+            min-height: 0;
+            max-height: none;
+            box-shadow: none;
+            text-align: left;
+            background: none;
+            visibility: visible;
+            text-indent: 0;
+            text-shadow: none;
+            word-spacing: normal;
+            border-radius: 0;
+            text-transform: none;
+            letter-spacing: normal;
+            vertical-align: baseline;
+            text-decoration: none;
+            -webkit-transform: none;
+            -moz-transform: none;
+            transform: none;
+            -webkit-transition: none;
+            -moz-transition: none;
+            transition: none;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+        #tr-popup:after,
+        #tr-popup:before,
+        #tr-popup *:after,
+        #tr-popup *:before,
+        #tr-stripe:after,
+        #tr-stripe:before,
+        #tr-stripe *:after,
+        #tr-stripe *:before {
+            display: none;
+        }
+        #tr-popup[data-hidden="true"],
+        #tr-stripe[data-hidden="true"] {
+            display: none;
+        }
+        [data-indent="true"] #tr-stripe {
+            transform: translateY(-56px);
+        }
+        [data-type="trSpan"][data-selected="true"] {
+            color: #222 !important;
+            background: #ffeba0 !important;
+        }
+    </style>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="noindex" name="robots">
+    <meta content="OpenCage - account registration" name="description">
+    <title>OpenCage</title>
+    <link href="https://assets.opencagedata.com/assets/favicon-87b005b78d525e217f87b3da68cfc008223392f914c557c04120e05f98caa617." rel="shortcut icon" type="image/x-icon">
+    <link href="https://assets.opencagedata.com/assets/favicon-32x32-d26ea3e85fc671067f21f2daa037b2a9b01b28755aba2b385e5879e2d23f76c8.pnghh" rel="icon" sizes="32x32" type="image/png">
+    <link href="https://assets.opencagedata.com/assets/favicon-16x16-8c2658452b18782f5b536fcac07be8af69f2fee4d121b3412e3cc43ee96cdcd9.pnghh" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://assets.opencagedata.com/assets/favicon-192x192-90b5c3313f4d260427e23ab7b998993930af12f9d212e250ed3da0bb6d9a7e41.pnghh" rel="icon" sizes="192x192" type="image/png">
+    <link href="https://assets.opencagedata.com/assets/favicon-512x512-041882585a2625eef5ed16a9441dc7eb4834d391990f21f3505f4631ba0dec3c.pnghh" rel="icon" sizes="512x512" type="image/png">
+    <link href="./OpenCage_files/user_registration-28610bbe9cd183e5eced0a087cb48a91846bebe45099112132498423d159d726.css" media="all" rel="stylesheet">
+    <meta content="authenticity_token" name="csrf-param">
+    <meta content="hh" name="csrf-token">
+</head>
+<body class="user-registration">
+    <div class="tr-stripe" id="tr-stripe" lang="en" translate="no" data-hidden="true">
+        <div class="tr-stripe__info-row">
+            <p class="tr-stripe__text">You are on the Yandex Translate website</p>
+        </div>
+        <div class="tr-stripe__main-row" hidden>
+            <div class="tr-stripe__cell tr-stripe__primary-cell" hidden>
+                <div class="tr-stripe__logo" id="tr-stripe__logo">
+                    <a aria-label="Yandex Translate – dictionary and online translation between English and over 90 other languages." class="tr-stripe__compact-logo" href="https://translate.yandex.com/" target="_blank">&nbsp;</a>
+                    <div class="tr-stripe__full-logo">
+                        <a aria-label="Search with Yandex" class="tr-stripe__company" href="https://yandex.com/" target="_blank">&nbsp;</a>
+                        <a aria-label="Yandex Translate – dictionary and online translation between English and over 90 other languages." class="tr-stripe__service" href="https://translate.yandex.com/" target="_blank">&nbsp;</a>
+                    </div>
+                </div>
+                <a class="tr-stripe__link" href="https://opencagedata.com/users/sign_in" id="tr-stripe__link" target="_blank">opencagedata.com</a>
+            </div>
+            <div class="tr-stripe__cell tr-stripe__secondary-cell">
+                <div class="tr-stripe__buttons">
+                    <button aria-pressed="true" class="tr-stripe__button tr-stripe__button_active" id="tr-stripe__button_dst">
+                        <span class="tr-stripe__button-code" id="tr-stripe__button-code_dst">en</span>
+                        <span class="tr-stripe__button-text">Translation</span>
+                    </button>
+                    <button aria-pressed="false" class="tr-stripe__button" id="tr-stripe__button_src">
+                        <span class="tr-stripe__button-code" id="tr-stripe__button-code_src">nl</span>
+                        <span class="tr-stripe__button-text">Original</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button aria-label="Close" class="tr-stripe__close" id="closeHeader"></button>
+    </div>
+    <header></header>
+    <main>
+        <div id="logo">
+            <a href="https://translated.turbopages.org/proxy_u/nl-en.en.1c2eea6c-67e4adc2-69a1b15e-74722d776562/https/opencagedata.com/" target="_self">
+                <img alt="OpenCage" class="logo" height="30" loading="lazy" src="./OpenCage_files/opencage-cage.green-5cb785e4c002e10adf72d3aad1b6445cb1306161b3ece554dde4f222476a447d.svg" width="80">
+            </a>
+        </div>
+        <div class="authform">
+            <h3>Log in</h3>
+            <div class="position-relative">
+                <div id="oauth-links-overlay">
+                    <div class="oauth-links">
+                        <p>
+                            <button class="submit w-100" id="email-and-password">Email &amp; Password</button>
+                        </p>
+                        <p>or</p>
+                        <form accept-charset="UTF-8" action="https://opencagedata.com/users/auth/google_oauth2" method="post">
+                            <input autocomplete="off" name="hh" type="hidden" value="Xb8bE0gzrJgVzYLsSsKUqep0q6eQMYmeFmV7E1e-4HW5efMk-Wz4dRcqwPc2aICsStcvOu3pAkZDos1E6YA_5w">
+                            <button class="submit oauth-link-google">
+                                <i aria-hidden="true" class="fab fa-google"></i> Log in with Google
+                            </button>
+                        </form>
+                        <form accept-charset="UTF-8" action="https://opencagedata.com/users" method="post">
+                            <input autocomplete="off" name="authenticity_token" type="hidden" value="Xb8bE0gzrJgVzYLsSsKUqep0q6eQMYmeFmV7E1e-4HW5efMk-Wz4dRcqwPc2aICsStcvOu3pAkZDos1E6YA_5w">
+                            <button class="submit oauth-link-github">
+                                <i aria-hidden="true" class="fab fa-github"></i> Log in with GitHub
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <form accept-charset="UTF-8" action="https://opencagedata.com/users/sign_in" class="simple_form new_user" id="new_user" method="post">
+                    <input autocomplete="off" name="authenticity_token" type="hidden" value="Xb8bE0gzrJgVzYLsSsKUqep0q6eQMYmeFmV7E1e-4HW5efMk-Wz4dRcqwPc2aICsStcvOu3pAkZDos1E6YA_5w">
+                    <div class="form-inputs mt-5">
+                        <div class="mb-3 email required disabled user_email">
+                            <label class="form-label email required disabled" for="user_email">Email *</label>
+                            <input class="form-control string email required disabled" disabled="disabled" id="user_email" name="user[email]" type="email" value="">
+                        </div>
+                        <div class="mb-3 password optional disabled user_password">
+                            <label class="form-label password optional disabled" for="user_password">Password</label>
+                            <input autocomplete="off" class="form-control password optional disabled" disabled="disabled" id="user_password" name="user[password]" type="password">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <input class="btn btn-lg w-100 btn-primary mb-3" data-disable-with="Log in" name="commit" type="submit" value="Log in">
+                        <a href="https://translated.turbopages.org/proxy_u/nl-en.en.1c2eea6c-67e4adc2-69a1b15e-74722d776562/https/opencagedata.com/users/password">Reset password</a> -
+                        <a href="https://translated.turbopages.org/proxy_u/nl-en.en.1c2eea6c-67e4adc2-69a1b15e-74722d776562/https/opencagedata.com/users/sign_in">Login with Google or Github</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="authform-footer">
+            <span>Don't have an account? <a href="https://translated.turbopages.org/proxy_u/nl-en.en.1c2eea6c-67e4adc2-69a1b15e-74722d776562/https/opencagedata.com/users/sign_up">Sign up</a></span>
+        </div>
+    </main>
+    <footer>
+        <span>© 2013-2025 OpenCage GmbH · </span>
+        <a href="https://translated.turbopages.org/proxy_u/nl-en.en.1c2eea6c-67e4adc2-69a1b15e-74722d776562/https/opencagedata.com/terms">Terms and Conditions</a> ·
+        <a href="https://translated.turbopages.org/proxy_u/nl-en.en.1c2eea6c-67e4adc2-69a1b15e-74722d776562/https/opencagedata.com/gdpr">GDPR / Data Protection</a> ·
+        <a href="https://translated.turbopages.org/proxy_u/nl-en.en.1c2eea6c-67e4adc2-69a1b15e-74722d776562/https/opencagedata.com/contact">Contact Us</a>
+    </footer>
+</body>
+</html>
