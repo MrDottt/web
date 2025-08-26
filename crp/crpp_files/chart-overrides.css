@@ -1,0 +1,61 @@
+.chart-page {
+  /* NOTE: variables overriden dynamically */
+}
+
+.chart-page {
+  background: var(--background-colour);
+}
+
+.chart-page .apply-overflow-tooltip {
+  display: none !important;
+}
+
+.chart-page .wrap-18oKCBRc-,
+.chart-page .text-1sK7vbvh-,
+.chart-page .icon-beK_KS0k-,
+.chart-page .item-2xPVYue0-,
+.chart-page .tv-dialog__title,
+.chart-page .tv-insert-study-item__title,
+.chart-page .item-2xPVYue0-,
+.chart-page .input-3lfOzLDc- {
+  color: var(--text-colour) !important;
+}
+
+.chart-page .chart-container {
+  border-color: var(--background-colour) !important;
+}
+
+.chart-page .layout__area--top,
+.chart-page .group-wWM3zP_M-,
+.chart-page .scrollWrap-2ReEQpR0-,
+.chart-page .dropdown-1zOBoqnG-,
+.chart-page .item-2xPVYue0-,
+.chart-page .tv-dialog,
+.chart-page .tv-search-row__input,
+.chart-page .drawingToolbar-U3_QXRof-,
+.chart-page .inner-1xuW-gY4-,
+.chart-page .group-2JyOhh7Z- {
+  background: var(--card-colour) !important;
+}
+
+.chart-page .isActive-22S-lGpa-,
+.chart-page .isOpened-1939ai3F-,
+.chart-page .isOpened-p-Ume5l9-,
+.chart-page .item-2xPVYue0-:hover {
+  background: var(--brand) !important;
+}
+
+.chart-page .icon-1Y-3MM9F- {
+  color: var(--text-colour) !important;
+}
+.chart-page .icon-1Y-3MM9F- svg {
+  fill: var(--text-colour) !important;
+}
+
+.chart-page .tv-insert-study-item {
+  background-color: transparent !important;
+}
+
+.chart-page .inner-32OP7ejC- {
+  width: 150px !important;
+}
